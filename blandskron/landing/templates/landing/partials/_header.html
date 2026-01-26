@@ -1,0 +1,75 @@
+{% load static %}
+
+<header id="site-header" class="fixed top-0 inset-x-0 z-[998]">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="header-glass mt-3">
+      <div class="flex h-14 items-center justify-between px-3 sm:px-4">
+
+        <!-- Brand -->
+        <div class="flex items-center gap-3">
+          <a href="#home" data-scroll="home" class="flex items-center gap-2">
+            <img src="{% static 'landing/img/logo.png' %}" alt="Blandskron" class="h-8 w-auto" />
+          </a>
+        </div>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-1">
+          <button data-scroll="home" class="nav-link is-active">Home</button>
+          <button data-scroll="about" class="nav-link">Sobre Mí</button>
+          <button data-scroll="services" class="nav-link">Servicios</button>
+          <button data-scroll="certifications" class="nav-link">Formación</button>
+          <button data-scroll="contact" class="nav-link">Contacto</button>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-2">
+          <button
+            data-scroll="contact"
+            class="hidden sm:inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium
+                   bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA]
+                   hover:from-[#7C3AED] hover:to-[#8B5CF6]
+                   shadow-2xl shadow-[#8B5CF6]/35 hover:shadow-[#8B5CF6]/55
+                   transition-all"
+          >
+            Solicitar Asesoría
+          </button>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobileMenuBtn"
+            type="button"
+            class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 px-3 py-2"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="text-white/90">☰</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="mobile-menu hidden md:hidden px-3 sm:px-4 pb-3">
+        <div class="grid gap-2 pt-2">
+          <button data-scroll="home" class="nav-link w-full justify-start">Home</button>
+          <button data-scroll="about" class="nav-link w-full justify-start">Sobre Mí</button>
+          <button data-scroll="services" class="nav-link w-full justify-start">Servicios</button>
+          <button data-scroll="certifications" class="nav-link w-full justify-start">Formación</button>
+          <button data-scroll="contact" class="nav-link w-full justify-start">Contacto</button>
+
+          <button
+            data-scroll="contact"
+            class="mt-2 inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium
+                   bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA]
+                   hover:from-[#7C3AED] hover:to-[#8B5CF6]
+                   shadow-2xl shadow-[#8B5CF6]/35 hover:shadow-[#8B5CF6]/55
+                   transition-all"
+          >
+            Solicitar Asesoría →
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>

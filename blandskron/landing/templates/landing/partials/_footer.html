@@ -1,0 +1,236 @@
+{# landing/templates/landing/partials/_footer.html (FIX className -> class) #}
+{% load static %}
+
+<footer class="bg-[#0f0f0f] border-t border-[#8B5CF6]/20" id="footer">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+
+      <div class="space-y-4">
+        <img src="{% static 'landing/img/logo.png' %}" alt="Blandskron" class="h-10 w-auto" />
+        
+        <div class="flex items-center gap-2 text-white/70">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="shrink-0"
+          >
+            <path
+              d="M10.6667 12L14.6667 8L10.6667 4"
+              stroke="#8B5CF6"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M5.33325 4L1.33325 8L5.33325 12"
+              stroke="#8B5CF6"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <span>Tecnología</span>
+        </div>
+
+        <div class="flex items-center gap-2 text-white/70">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="shrink-0"
+          >
+            <path
+              d="M14.2801 7.28125C14.3995 7.2286 14.5007 7.14209 14.5714 7.03245C14.6421 6.92281 14.679 6.79484 14.6777 6.6644C14.6763 6.53397 14.6367 6.40679 14.5638 6.29864C14.4909 6.19048 14.3879 6.10608 14.2674 6.05591L8.55344 3.45325C8.37973 3.37401 8.19104 3.33301 8.00011 3.33301C7.80918 3.33301 7.62048 3.37401 7.44678 3.45325L1.73344 6.05325C1.61475 6.10523 1.51379 6.19067 1.44289 6.29912C1.37199 6.40758 1.33423 6.53434 1.33423 6.66391C1.33423 6.79349 1.37199 6.92025 1.44289 7.0287C1.51379 7.13716 1.61475 7.2226 1.73344 7.27458L7.44678 9.87991C7.62048 9.95915 7.80918 10.0002 8.00011 10.0002C8.19104 10.0002 8.37973 9.95915 8.55344 9.87991L14.2801 7.28125Z"
+              stroke="#4A148C"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M14.6667 6.6665V10.6665"
+              stroke="#4A148C"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M4 8.3335V10.6668C4 11.1973 4.42143 11.706 5.17157 12.081C5.92172 12.4561 6.93913 12.6668 8 12.6668C9.06087 12.6668 10.0783 12.4561 10.8284 12.081C11.5786 11.706 12 11.1973 12 10.6668V8.3335"
+              stroke="#4A148C"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <span>Formación</span>
+        </div>
+
+        <div class="flex items-center gap-2 text-white/70">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="shrink-0"
+          >
+            <path
+              d="M10 9.3335C10.1333 8.66683 10.4667 8.20016 11 7.66683C11.6667 7.06683 12 6.20016 12 5.3335C12 4.27263 11.5786 3.25521 10.8284 2.50507C10.0783 1.75492 9.06087 1.3335 8 1.3335C6.93913 1.3335 5.92172 1.75492 5.17157 2.50507C4.42143 3.25521 4 4.27263 4 5.3335C4 6.00016 4.13333 6.80016 5 7.66683C5.46667 8.1335 5.86667 8.66683 6 9.3335"
+              stroke="#2C5F7C"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M6 12H10"
+              stroke="#2C5F7C"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M6.66675 14.6665H9.33341"
+              stroke="#2C5F7C"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <span>Innovación</span>
+        </div>
+
+      </div>
+
+      <div>
+        <h4 class="text-white font-medium mb-4">Enlaces rápidos</h4>
+        <ul class="space-y-2">
+          <li><button data-scroll="home" class="text-white/70 hover:text-[#8B5CF6] transition-colors">Home</button></li>
+          <li><button data-scroll="about" class="text-white/70 hover:text-[#8B5CF6] transition-colors">Sobre Mí</button></li>
+          <li><button data-scroll="services" class="text-white/70 hover:text-[#8B5CF6] transition-colors">Servicios</button></li>
+          <li><button data-scroll="certifications" class="text-white/70 hover:text-[#8B5CF6] transition-colors">Formación</button></li>
+          <li><button data-scroll="contact" class="text-white/70 hover:text-[#8B5CF6] transition-colors">Contacto</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-medium mb-4">Servicios</h4>
+        <ul class="space-y-2 text-white/70 text-sm">
+          <li>Consultoría Tecnológica</li>
+          <li>Desarrollo de Software</li>
+          <li>Inteligencia Artificial</li>
+          <li>Ciberseguridad</li>
+          <li>Formación SENCE</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-medium mb-4">Contacto</h4>
+        <ul class="space-y-2 text-white/70 text-sm">
+          <li>
+            <a href="mailto:contacto@blandskron.com"
+               class="hover:text-[#8B5CF6] transition-colors break-all">
+              contacto@blandskron.com
+            </a>
+          </li>
+          <li>Chile</li>
+          <li>
+            <a href="https://linkedin.com/in/blandskron" target="_blank" rel="noopener noreferrer"
+               class="hover:text-[#8B5CF6] transition-colors">
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+
+        <div class="flex gap-3 mt-4">
+          <a href="https://github.com/blandskron"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 flex items-center justify-center
+                    bg-white/5 hover:bg-white/10
+                    border border-white/10 rounded-lg
+                    transition-colors
+                    text-white/80 hover:text-white">
+
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.5 18.3332V14.9998C12.6159 13.9559 12.3166 12.9083 11.6667 12.0832C14.1667 12.0832 16.6667 10.4165 16.6667 7.49984C16.7333 6.45817 16.4417 5.43317 15.8333 4.58317C16.0667 3.62484 16.0667 2.62484 15.8333 1.6665C15.8333 1.6665 15 1.6665 13.3333 2.9165C11.1333 2.49984 8.86666 2.49984 6.66666 2.9165C4.99999 1.6665 4.16666 1.6665 4.16666 1.6665C3.91666 2.62484 3.91666 3.62484 4.16666 4.58317C3.55988 5.42974 3.26538 6.46049 3.33332 7.49984C3.33332 10.4165 5.83332 12.0832 8.33332 12.0832C8.00832 12.4915 7.76666 12.9582 7.62499 13.4582C7.48332 13.9582 7.44166 14.4832 7.49999 14.9998V18.3332"
+                stroke="currentColor"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7.50008 15.0002C3.74175 16.6668 3.33341 13.3335 1.66675 13.3335"
+                stroke="currentColor"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+          </a>
+
+          <a href="https://linkedin.com/in/blandskron"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 flex items-center justify-center
+                    bg-white/5 hover:bg-white/10
+                    border border-white/10 rounded-lg
+                    transition-colors
+                    text-white/80 hover:text-white">
+
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.3333 6.6665C14.6593 6.6665 15.9311 7.19329 16.8688 8.13097C17.8065 9.06865 18.3333 10.3404 18.3333 11.6665V17.4998H14.9999V11.6665C14.9999 11.2245 14.8243 10.8006 14.5118 10.488C14.1992 10.1754 13.7753 9.99984 13.3333 9.99984C12.8912 9.99984 12.4673 10.1754 12.1547 10.488C11.8422 10.8006 11.6666 11.2245 11.6666 11.6665V17.4998H8.33325V11.6665C8.33325 10.3404 8.86004 9.06865 9.79772 8.13097C10.7354 7.19329 12.0072 6.6665 13.3333 6.6665Z"
+                stroke="currentColor"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M5.00008 7.5H1.66675V17.5H5.00008V7.5Z"
+                stroke="currentColor"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3.33341 4.99984C4.25389 4.99984 5.00008 4.25365 5.00008 3.33317C5.00008 2.4127 4.25389 1.6665 3.33341 1.6665C2.41294 1.6665 1.66675 2.4127 1.66675 3.33317C1.66675 4.25365 2.41294 4.99984 3.33341 4.99984Z"
+                stroke="currentColor"
+                stroke-width="1.66667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-white/10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-white/60 text-sm">
+        <p>© 2026 Blandskron – Todos los derechos reservados</p>
+        <p>Tecnología · Formación · Innovación</p>
+      </div>
+    </div>
+  </div>
+</footer>
