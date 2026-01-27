@@ -8,75 +8,109 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Card 1 -->
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.07] transition-colors fade-up">
-        <div class="w-11 h-11 rounded-2xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 flex items-center justify-center mb-4">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M6.25 7.5C6.25 6.11929 7.36929 5 8.75 5H11.25C12.6307 5 13.75 6.11929 13.75 7.5V12.5C13.75 13.8807 12.6307 15 11.25 15H8.75C7.36929 15 6.25 13.8807 6.25 12.5V7.5Z" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8.75 8.75H11.25" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M8.75 11.25H10.4167" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
+      <div class="group bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-0.5 hover:border-[#8B5CF6]/50 hover:shadow-[0_0_0_1px_rgba(139,92,246,.18),0_18px_50px_rgba(0,0,0,.45)] fade-up">
+        <div class="w-11 h-11 rounded-2xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-[#8B5CF6]/55 group-hover:bg-[#8B5CF6]/20 group-hover:shadow-[0_0_0_1px_rgba(139,92,246,.18)]">
+          
+          <!-- ICONO (SVG EXACTO, SIN CAMBIOS) -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.33325 11.0835C2.33328 9.7852 2.72711 8.51748 3.46274 7.44774C4.19837 6.378 5.24119 5.55656 6.45346 5.09193C7.66574 4.62729 8.99044 4.54131 10.2526 4.84535C11.5148 5.14938 12.655 5.82912 13.5228 6.7948C13.5839 6.86014 13.6578 6.91224 13.7398 6.94786C13.8219 6.98348 13.9104 7.00186 13.9999 7.00186C14.0894 7.00186 14.1779 6.98348 14.26 6.94786C14.3421 6.91224 14.416 6.86014 14.4771 6.7948C15.3421 5.82284 16.4826 5.13739 17.7468 4.82966C19.011 4.52194 20.339 4.60653 21.5539 5.07219C22.7689 5.53785 23.8132 6.36249 24.5479 7.43635C25.2826 8.5102 25.6728 9.78235 25.6666 11.0835C25.6666 13.7551 23.9166 15.7501 22.1666 17.5001L15.7593 23.6986C15.5419 23.9483 15.2738 24.1489 14.973 24.287C14.6721 24.4251 14.3453 24.4976 14.0143 24.4997C13.6832 24.5018 13.3555 24.4334 13.0529 24.2991C12.7503 24.1648 12.4798 23.9677 12.2593 23.7208L5.83325 17.5001C4.08325 15.7501 2.33325 13.7668 2.33325 11.0835Z" stroke="#8B5CF6" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+
         </div>
+
         <h3 class="text-white font-medium mb-2">Lenguaje claro y cercano</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Explicamos conceptos técnicos en términos que todos entienden.</p>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Explicamos conceptos técnicos en términos que todos entienden.
+        </p>
       </div>
 
       <!-- Card 2 -->
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.07] transition-colors fade-up">
-        <div class="w-11 h-11 rounded-2xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 flex items-center justify-center mb-4">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M10 2.5V5" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M10 15V17.5" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M2.5 10H5" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M15 10H17.5" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M6.1 6.1L7.86667 7.86667" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M12.1333 12.1333L13.9 13.9" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M13.9 6.1L12.1333 7.86667" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M7.86667 12.1333L6.1 13.9" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M10 13.3333C11.8409 13.3333 13.3333 11.8409 13.3333 10C13.3333 8.15905 11.8409 6.66667 10 6.66667C8.15905 6.66667 6.66667 8.15905 6.66667 10C6.66667 11.8409 8.15905 13.3333 10 13.3333Z" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <div class="group bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-0.5 hover:border-[#8B5CF6]/50 hover:shadow-[0_0_0_1px_rgba(139,92,246,.18),0_18px_50px_rgba(0,0,0,.45)] fade-up">
+        <div class="w-11 h-11 rounded-2xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-[#8B5CF6]/55 group-hover:bg-[#8B5CF6]/20 group-hover:shadow-[0_0_0_1px_rgba(139,92,246,.18)]">
+          
+          <!-- ICONO (SVG EXACTO, SIN CAMBIOS) -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.66674 16.3331C4.44596 16.3339 4.22951 16.272 4.04252 16.1546C3.85553 16.0372 3.70568 15.8692 3.61038 15.67C3.51508 15.4709 3.47825 15.2488 3.50416 15.0296C3.53006 14.8103 3.61765 14.6029 3.75674 14.4314L15.3067 2.53145C15.3934 2.43144 15.5114 2.36387 15.6416 2.3398C15.7717 2.31574 15.9061 2.33663 16.0228 2.39904C16.1394 2.46144 16.2314 2.56166 16.2836 2.68324C16.3358 2.80482 16.3452 2.94054 16.3101 3.06812L14.0701 10.0914C14.004 10.2682 13.9818 10.4584 14.0054 10.6456C14.029 10.8329 14.0977 11.0116 14.2055 11.1664C14.3133 11.3213 14.4571 11.4477 14.6246 11.5348C14.792 11.6219 14.978 11.6671 15.1667 11.6664H23.3334C23.5542 11.6657 23.7706 11.7276 23.9576 11.845C24.1446 11.9623 24.2945 12.1304 24.3898 12.3295C24.4851 12.5287 24.5219 12.7508 24.496 12.97C24.4701 13.1893 24.3825 13.3967 24.2434 13.5681L12.6934 25.4681C12.6068 25.5681 12.4887 25.6357 12.3586 25.6598C12.2285 25.6838 12.0941 25.6629 11.9774 25.6005C11.8607 25.5381 11.7687 25.4379 11.7165 25.3163C11.6643 25.1947 11.655 25.059 11.6901 24.9314L13.9301 17.9081C13.9961 17.7313 14.0183 17.5412 13.9947 17.3539C13.9711 17.1667 13.9025 16.988 13.7946 16.8331C13.6868 16.6782 13.543 16.5518 13.3756 16.4648C13.2082 16.3777 13.0221 16.3325 12.8334 16.3331H4.66674Z"
+              stroke="#8B5CF6"
+              stroke-width="2.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
+
         </div>
+
         <h3 class="text-white font-medium mb-2">Visión estratégica y técnica</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Combinamos conocimiento profundo con perspectiva de negocio.</p>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Combinamos conocimiento profundo con perspectiva de negocio.
+        </p>
       </div>
 
       <!-- Card 3 -->
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.07] transition-colors fade-up">
-        <div class="w-11 h-11 rounded-2xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 flex items-center justify-center mb-4">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M10 17.5C13.4518 17.5 16.25 14.7018 16.25 11.25C16.25 7.79822 13.4518 5 10 5C6.54822 5 3.75 7.79822 3.75 11.25C3.75 14.7018 6.54822 17.5 10 17.5Z" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M7.5 2.5H12.5" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M10 8.75V11.25L12.0833 12.5" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <div class="group bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-0.5 hover:border-[#8B5CF6]/50 hover:shadow-[0_0_0_1px_rgba(139,92,246,.18),0_18px_50px_rgba(0,0,0,.45)] fade-up">
+        <div class="w-11 h-11 rounded-2xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-[#8B5CF6]/55 group-hover:bg-[#8B5CF6]/20 group-hover:shadow-[0_0_0_1px_rgba(139,92,246,.18)]">
+          
+          <!-- ICONO (SVG EXACTO, SIN CAMBIOS) -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M23.3334 15.1669C23.3334 21.0002 19.2501 23.9169 14.3967 25.6085C14.1426 25.6947 13.8665 25.6905 13.6151 25.5969C8.75008 23.9169 4.66675 21.0002 4.66675 15.1669V7.0002C4.66675 6.69078 4.78966 6.39403 5.00846 6.17524C5.22725 5.95645 5.524 5.83353 5.83341 5.83353C8.16675 5.83353 11.0834 4.43353 13.1134 2.6602C13.3606 2.44903 13.675 2.33301 14.0001 2.33301C14.3252 2.33301 14.6396 2.44903 14.8867 2.6602C16.9284 4.4452 19.8334 5.83353 22.1667 5.83353C22.4762 5.83353 22.7729 5.95645 22.9917 6.17524C23.2105 6.39403 23.3334 6.69078 23.3334 7.0002V15.1669Z"
+              stroke="#8B5CF6"
+              stroke-width="2.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
+
         </div>
+
         <h3 class="text-white font-medium mb-2">Experiencia real, no teórica</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Soluciones probadas en proyectos y empresas reales.</p>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Soluciones probadas en proyectos y empresas reales.
+        </p>
       </div>
 
       <!-- Card 4 -->
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.07] transition-colors fade-up">
-        <div class="w-11 h-11 rounded-2xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 flex items-center justify-center mb-4">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M6.25 16.25C7.63071 16.25 8.75 15.1307 8.75 13.75C8.75 12.3693 7.63071 11.25 6.25 11.25C4.86929 11.25 3.75 12.3693 3.75 13.75C3.75 15.1307 4.86929 16.25 6.25 16.25Z" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M13.75 16.25C15.1307 16.25 16.25 15.1307 16.25 13.75C16.25 12.3693 15.1307 11.25 13.75 11.25C12.3693 11.25 11.25 12.3693 11.25 13.75C11.25 15.1307 12.3693 16.25 13.75 16.25Z" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6.25 11.25V8.75C6.25 7.36929 7.36929 6.25 8.75 6.25H11.25C12.6307 6.25 13.75 7.36929 13.75 8.75V11.25" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10 3.75V6.25" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
+      <div class="group bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-0.5 hover:border-[#8B5CF6]/50 hover:shadow-[0_0_0_1px_rgba(139,92,246,.18),0_18px_50px_rgba(0,0,0,.45)] fade-up">
+        <div class="w-11 h-11 rounded-2xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-[#8B5CF6]/55 group-hover:bg-[#8B5CF6]/20 group-hover:shadow-[0_0_0_1px_rgba(139,92,246,.18)]">
+          
+          <!-- ICONO (SVG EXACTO, SIN CAMBIOS) -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.6666 24.5V22.1667C18.6666 20.929 18.1749 19.742 17.2997 18.8668C16.4246 17.9917 15.2376 17.5 13.9999 17.5H6.99992C5.76224 17.5 4.57526 17.9917 3.70009 18.8668C2.82492 19.742 2.33325 20.929 2.33325 22.1667V24.5" stroke="#8B5CF6" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.6667 3.64941C19.6675 3.90885 20.5537 4.49322 21.1864 5.31082C21.819 6.12842 22.1623 7.13295 22.1623 8.16675C22.1623 9.20054 21.819 10.2051 21.1864 11.0227C20.5537 11.8403 19.6675 12.4246 18.6667 12.6841" stroke="#8B5CF6" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25.6667 24.5002V22.1669C25.666 21.1329 25.3218 20.1284 24.6883 19.3112C24.0549 18.494 23.1679 17.9104 22.1667 17.6519" stroke="#8B5CF6" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.4999 12.8333C13.0772 12.8333 15.1666 10.744 15.1666 8.16667C15.1666 5.58934 13.0772 3.5 10.4999 3.5C7.92259 3.5 5.83325 5.58934 5.83325 8.16667C5.83325 10.744 7.92259 12.8333 10.4999 12.8333Z" stroke="#8B5CF6" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+
         </div>
+
         <h3 class="text-white font-medium mb-2">Acompañamiento continuo</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Estamos contigo en cada etapa del proyecto.</p>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Estamos contigo en cada etapa del proyecto.
+        </p>
       </div>
 
       <!-- Card 5 -->
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.07] transition-colors fade-up md:col-span-2 lg:col-span-1">
-        <div class="w-11 h-11 rounded-2xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 flex items-center justify-center mb-4">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5Z" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M7.5 10.4167L9.16667 12.0833L12.9167 8.33333" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <div class="group bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-0.5 hover:border-[#8B5CF6]/50 hover:shadow-[0_0_0_1px_rgba(139,92,246,.18),0_18px_50px_rgba(0,0,0,.45)] fade-up md:col-span-2 lg:col-span-1">
+        <div class="w-11 h-11 rounded-2xl border border-[#8B5CF6]/25 bg-[#8B5CF6]/10 flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-[#8B5CF6]/55 group-hover:bg-[#8B5CF6]/20 group-hover:shadow-[0_0_0_1px_rgba(139,92,246,.18)]">
+          
+          <!-- ICONO (SVG EXACTO, SIN CAMBIOS) -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.33325 11.0835C2.33328 9.7852 2.72711 8.51748 3.46274 7.44774C4.19837 6.378 5.24119 5.55656 6.45346 5.09193C7.66574 4.62729 8.99044 4.54131 10.2526 4.84535C11.5148 5.14938 12.655 5.82912 13.5228 6.7948C13.5839 6.86014 13.6578 6.91224 13.7398 6.94786C13.8219 6.98348 13.9104 7.00186 13.9999 7.00186C14.0894 7.00186 14.1779 6.98348 14.26 6.94786C14.3421 6.91224 14.416 6.86014 14.4771 6.7948C15.3421 5.82284 16.4826 5.13739 17.7468 4.82966C19.011 4.52194 20.339 4.60653 21.5539 5.07219C22.7689 5.53785 23.8132 6.36249 24.5479 7.43635C25.2826 8.5102 25.6728 9.78235 25.6666 11.0835C25.6666 13.7551 23.9166 15.7501 22.1666 17.5001L15.7593 23.6986C15.5419 23.9483 15.2738 24.1489 14.973 24.287C14.6721 24.4251 14.3453 24.4976 14.0143 24.4997C13.6832 24.5018 13.3555 24.4334 13.0529 24.2991C12.7503 24.1648 12.4798 23.9677 12.2593 23.7208L5.83325 17.5001C4.08325 15.7501 2.33325 13.7668 2.33325 11.0835Z"
+              stroke="#8B5CF6"
+              stroke-width="2.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
+
         </div>
+
         <h3 class="text-white font-medium mb-2">Enfoque ético y profesional</h3>
-        <p class="text-white/70 text-sm leading-relaxed">Compromiso con la calidad, seguridad y transparencia.</p>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Compromiso con la calidad, seguridad y transparencia.
+        </p>
       </div>
+
     </div>
   </div>
 </section>
