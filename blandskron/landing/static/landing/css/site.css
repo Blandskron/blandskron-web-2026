@@ -416,3 +416,463 @@ html { scroll-behavior: smooth; }
   90%{ transform: translateY(-2px) }
   94%{ transform: translateY(0) }
 }
+
+/* Layout / background */
+.services-section{
+  position:relative;
+  background:#0f0f0f;
+  padding: 80px 0;
+  overflow:hidden;
+}
+.services-bg{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(900px 520px at 20% 15%, rgba(139,92,246,.18), transparent 55%),
+    radial-gradient(760px 480px at 80% 25%, rgba(63,180,225,.12), transparent 55%),
+    radial-gradient(900px 560px at 55% 90%, rgba(74,20,140,.14), transparent 60%);
+  pointer-events:none;
+}
+.services-container{
+  position:relative;
+  z-index:1;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.services-head{
+  text-align:center;
+  margin-bottom: 28px;
+}
+.services-title{
+  color:#fff;
+  font-size: 44px;
+  line-height: 1.05;
+  margin: 0 0 10px 0;
+  letter-spacing:-.02em;
+}
+.services-subtitle{
+  color: rgba(255,255,255,.70);
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Grid: 3 arriba, 2 abajo */
+.services-grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+.service-card{
+  grid-column: span 4;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  border-radius: 18px;
+  padding: 18px 18px;
+  transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
+  min-height: 260px;
+}
+
+/* Segunda fila (2 cards) */
+.service-card:nth-child(4),
+.service-card:nth-child(5){
+  grid-column: span 6;
+}
+
+/* Icono */
+.service-ico{
+  width:44px; height:44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom: 12px;
+  transition: background .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+/* Tipografías internas */
+.service-name{
+  color:#fff;
+  font-size: 16px;
+  margin: 0 0 8px 0;
+}
+.service-desc{
+  color: rgba(255,255,255,.70);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+}
+.service-list{
+  margin: 0;
+  padding-left: 16px;
+  color: rgba(255,255,255,.72);
+  font-size: 12px;
+  line-height: 1.75;
+}
+.service-note{
+  margin: 12px 0 0 0;
+  font-size: 11px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.6;
+}
+
+/* Hover base */
+.service-card:hover{
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.07);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 18px 55px rgba(0,0,0,.45);
+}
+
+/* ====== HOVERS POR COLOR (uno distinto por card) ====== */
+.service-card--purple:hover{
+  border-color: rgba(139,92,246,.55);
+  box-shadow: 0 0 0 1px rgba(139,92,246,.18), 0 18px 55px rgba(0,0,0,.45);
+}
+.service-card--purple:hover .service-ico{
+  border-color: rgba(139,92,246,.45);
+  background: rgba(139,92,246,.16);
+  box-shadow: 0 0 0 1px rgba(139,92,246,.16);
+}
+
+.service-card--cyan:hover{
+  border-color: rgba(63,180,225,.55);
+  box-shadow: 0 0 0 1px rgba(63,180,225,.18), 0 18px 55px rgba(0,0,0,.45);
+}
+.service-card--cyan:hover .service-ico{
+  border-color: rgba(63,180,225,.45);
+  background: rgba(63,180,225,.14);
+  box-shadow: 0 0 0 1px rgba(63,180,225,.16);
+}
+
+.service-card--pink:hover{
+  border-color: rgba(167,139,250,.60);
+  box-shadow: 0 0 0 1px rgba(167,139,250,.18), 0 18px 55px rgba(0,0,0,.45);
+}
+.service-card--pink:hover .service-ico{
+  border-color: rgba(167,139,250,.45);
+  background: rgba(167,139,250,.14);
+  box-shadow: 0 0 0 1px rgba(167,139,250,.16);
+}
+
+.service-card--amber:hover{
+  border-color: rgba(245,158,11,.55);
+  box-shadow: 0 0 0 1px rgba(245,158,11,.18), 0 18px 55px rgba(0,0,0,.45);
+}
+.service-card--amber:hover .service-ico{
+  border-color: rgba(245,158,11,.45);
+  background: rgba(245,158,11,.14);
+  box-shadow: 0 0 0 1px rgba(245,158,11,.16);
+}
+
+.service-card--green:hover{
+  border-color: rgba(34,197,94,.55);
+  box-shadow: 0 0 0 1px rgba(34,197,94,.18), 0 18px 55px rgba(0,0,0,.45);
+}
+.service-card--green:hover .service-ico{
+  border-color: rgba(34,197,94,.45);
+  background: rgba(34,197,94,.14);
+  box-shadow: 0 0 0 1px rgba(34,197,94,.16);
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .services-title{ font-size: 36px; }
+  .service-card{ grid-column: span 6; }
+  .service-card:nth-child(4),
+  .service-card:nth-child(5){ grid-column: span 6; }
+}
+@media (max-width: 640px){
+  .services-title{ font-size: 30px; }
+  .service-card{ grid-column: span 12; }
+  .service-card:nth-child(4),
+  .service-card:nth-child(5){ grid-column: span 12; }
+}
+
+.services-sep{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 14px;
+  margin: 14px auto 14px auto;
+  width: min(620px, 92%);
+}
+
+.services-sep__line{
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0),
+    rgba(255,255,255,.22),
+    rgba(255,255,255,0)
+  );
+  opacity: .9;
+}
+
+/* La clave: el icono NO va dentro de un circulo.
+   Va "flotando" y con tamaño real, como tu referencia */
+.services-sep__icon{
+  display:grid;
+  place-items:center;
+  width: 28px;           /* contenedor pequeño, no circular */
+  height: 34px;          /* permite el alto 31 del SVG */
+}
+
+.services-sep__icon svg{
+  display:block;
+  width: 17px;
+  height: 31px;
+  transform: translateY(1px); /* micro ajuste visual */
+  opacity: .95;
+}
+
+/* Color del SVG separador */
+.services-sep__icon{
+  color: rgba(139,92,246,.95); /* cambia aquí el color */
+}
+
+/* (opcional) glow suave */
+.services-sep__icon svg{
+  filter: drop-shadow(0 0 10px rgba(139,92,246,.35));
+}
+
+/* ===== Footer Pill (FINAL: como la imagen) ===== */
+.footer-pill{
+  display:flex;
+  align-items:stretch;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.04);
+  overflow:hidden;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+/* Cada botón (ícono arriba, texto abajo) */
+.footer-pill__item{
+  min-width: 180px;
+  padding: 18px 22px 16px;
+
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+
+  text-decoration: none;
+  color: rgba(255,255,255,.85);
+  font-size: 14px;
+  line-height: 1;
+  transition: background .2s ease, color .2s ease;
+}
+
+.footer-pill__item:hover{
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.95);
+}
+
+/* Ícono */
+.footer-pill__ico{
+  width: 34px;
+  height: 34px;
+  display:grid;
+  place-items:center;
+}
+
+.footer-pill__gif{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display:block;
+}
+
+/* Texto */
+.footer-pill__label{
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Divisor vertical */
+.footer-pill__divider{
+  width: 1px;
+  background: rgba(255,255,255,.16);
+}
+
+/* Responsive */
+@media (max-width: 640px){
+  .footer-pill{
+    width: 100%;
+    border-radius: 18px;
+  }
+  .footer-pill__item{
+    min-width: 0;
+    flex: 1;
+    padding: 14px 12px;
+  }
+}
+
+/* ===== Hero Badges (shadcn-style) ===== */
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  height: 28px;
+  padding: 0 12px;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+
+  border-radius: 999px;
+  white-space: nowrap;
+
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+/* Primary (default) */
+.hero-badge--primary{
+  background: #8B5CF6;
+  color: #0f0f0f;
+}
+
+/* Secondary */
+.hero-badge--secondary{
+  background: rgba(139,92,246,.18);
+  color: #EDE9FE;
+}
+
+/* Outline */
+.hero-badge--outline{
+  background: transparent;
+  color: rgba(255,255,255,.85);
+  border: 1px solid rgba(139,92,246,.45);
+}
+
+/* Hover (sutil, no exagerado) */
+.hero-badge--primary:hover{
+  background: #7C3AED;
+}
+
+.hero-badge--secondary:hover{
+  background: rgba(139,92,246,.28);
+}
+
+.hero-badge--outline:hover{
+  background: rgba(139,92,246,.12);
+}
+
+/* ====== Infinite flow FULL BLEED (no edges) ====== */
+.stats-flow--bleed{
+  width: 100vw;
+  position: relative;
+
+  /* esto rompe el contenedor centrado y lo pega a los bordes */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  /* sin márgenes externos */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  overflow: hidden;
+}
+
+/* máscara: fade suave a ambos lados (sensación infinito) */
+.stats-flow__mask{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  /* padding interno para que no choque con el borde visual */
+  padding: 10px 0;
+}
+
+.stats-flow__mask:before,
+.stats-flow__mask:after{
+  content:"";
+  position:absolute;
+  top:0; bottom:0;
+  width: 120px;
+  z-index: 2;
+  pointer-events:none;
+}
+
+.stats-flow__mask:before{
+  left:0;
+  background: linear-gradient(to right, rgba(15,15,15,1), rgba(15,15,15,0));
+}
+.stats-flow__mask:after{
+  right:0;
+  background: linear-gradient(to left, rgba(15,15,15,1), rgba(15,15,15,0));
+}
+
+/* track infinito */
+.stats-flow__track{
+  display:flex;
+  gap: 28px;
+  width: max-content;
+  will-change: transform;
+
+  animation: flow-scroll 26s linear infinite;
+}
+
+@keyframes flow-scroll{
+  0%{ transform: translateX(0); }
+  100%{ transform: translateX(-50%); }
+}
+
+/* items (SIN caja / SIN borde / SIN “card”) */
+.metric{
+  flex: 0 0 auto;
+  min-width: 260px;
+  padding: 10px 6px;
+  text-align: left;
+}
+
+/* icono al lado del número (no dentro de caja) */
+.metric__icon{
+  width: 28px;
+  height: 28px;
+  display:grid;
+  place-items:center;
+  color: rgba(167,139,250,.95);
+  margin-bottom: 10px;
+}
+
+/* número grande protagonista */
+.metric__n{
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: rgba(255,255,255,.95);
+  text-shadow: 0 0 22px rgba(139,92,246,.12);
+  margin-bottom: 8px;
+}
+
+.metric__t{
+  font-size: 14px;
+  color: rgba(255,255,255,.70);
+  letter-spacing: .02em;
+  text-transform: none;
+}
+
+/* responsive */
+@media (max-width: 640px){
+  .stats-flow__track{ gap: 20px; }
+  .metric{ min-width: 220px; }
+  .metric__n{ font-size: 38px; }
+  .stats-flow__mask:before,
+  .stats-flow__mask:after{ width: 72px; }
+}
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .stats-flow__track{ animation: none; }
+}

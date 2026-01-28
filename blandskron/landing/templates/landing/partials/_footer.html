@@ -1,7 +1,7 @@
-{# landing/templates/landing/partials/_footer.html (FIX className -> class) #}
 {% load static %}
 
-<footer class="bg-[#0f0f0f] border-t border-[#8B5CF6]/20" id="footer">
+<footer class="bg-[#0f0f0f]" id="footer">
+
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
 
@@ -139,7 +139,7 @@
               contacto@blandskron.com
             </a>
           </li>
-          <li>Chile</li>
+          <li>+569 5646 0650</li>
           <li>
             <a href="https://linkedin.com/in/blandskron" target="_blank" rel="noopener noreferrer"
                class="hover:text-[#8B5CF6] transition-colors">
@@ -226,11 +226,43 @@
       </div>
     </div>
 
-    <div class="pt-8 border-t border-white/10">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-white/60 text-sm">
-        <p>© 2026 Blandskron – Todos los derechos reservados</p>
-        <p>Tecnología · Formación · Innovación</p>
-      </div>
+    <!-- Footer pill (como la imagen) -->
+    <div class="mt-20 flex justify-center">
+      <nav class="footer-pill" aria-label="Navegación footer">
+
+        <a href="#projects" class="footer-pill__item">
+          <span class="footer-pill__ico">
+            <img src="{% static 'landing/img/cohete.gif' %}" alt="Cohete" class="footer-pill__gif" />
+          </span>
+          <span class="footer-pill__label">Proyectos</span>
+        </a>
+
+        <span class="footer-pill__divider" aria-hidden="true"></span>
+
+        <a href="#experience" class="footer-pill__item">
+          <span class="footer-pill__ico">
+            <img src="{% static 'landing/img/escritorio.gif' %}" alt="Cohete" class="footer-pill__gif" />
+          </span>
+          <span class="footer-pill__label">Experiencia</span>
+        </a>
+
+        <span class="footer-pill__divider" aria-hidden="true"></span>
+
+        <a href="#education" class="footer-pill__item">
+          <span class="footer-pill__ico">
+            <img src="{% static 'landing/img/edu.gif' %}" alt="Cohete" class="footer-pill__gif" />
+          </span>
+          <span class="footer-pill__label">Educación</span>
+        </a>
+
+      </nav>
     </div>
+
+    <div class="mt-10 flex justify-center items-center text-white/60 text-sm">
+      <p>© 2026 Blandskron – Tecnología · Formación · Innovación</p>
+    </div>
+
+    </div>
+
   </div>
 </footer>

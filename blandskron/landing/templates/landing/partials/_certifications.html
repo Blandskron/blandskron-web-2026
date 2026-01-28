@@ -3,82 +3,388 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center mb-16 fade-up">
       <div class="inline-flex items-center gap-2 bg-[#8B5CF6]/20 border border-[#8B5CF6]/30 rounded-full px-4 py-2 mb-4">
-        <span class="text-white/90">🏆 Formación y Certificaciones</span>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="shrink-0"
+          aria-hidden="true"
+        >
+          <path
+            d="M12.8975 10.7417L14.16 17.8467C14.1742 17.9304 14.1624 18.0163 14.1264 18.0932C14.0903 18.17 14.0317 18.2339 13.9583 18.2765C13.8849 18.3191 13.8003 18.3383 13.7157 18.3315C13.6311 18.3246 13.5507 18.2922 13.485 18.2384L10.5017 15.9992C10.3577 15.8916 10.1827 15.8335 10.003 15.8335C9.82318 15.8335 9.64822 15.8916 9.5042 15.9992L6.51587 18.2375C6.4503 18.2912 6.36992 18.3237 6.28545 18.3305C6.20098 18.3373 6.11643 18.3182 6.04309 18.2758C5.96975 18.2333 5.9111 18.1695 5.87497 18.0928C5.83884 18.0162 5.82694 17.9303 5.84087 17.8467L7.10254 10.7417"
+            stroke="#8B5CF6"
+            stroke-width="1.66667"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M10 11.6665C12.7614 11.6665 15 9.42793 15 6.6665C15 3.90508 12.7614 1.6665 10 1.6665C7.23858 1.6665 5 3.90508 5 6.6665C5 9.42793 7.23858 11.6665 10 11.6665Z"
+            stroke="#8B5CF6"
+            stroke-width="1.66667"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        <span class="text-white/90">Formación y Certificaciones</span>
       </div>
+
       <h2 class="text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
         Facilitador Acreditado SENCE (REUF)
       </h2>
+      {% include "landing/partials/_section-separator.html" %}
       <p class="text-lg text-white/70 max-w-3xl mx-auto">
         Bastián Landskron se encuentra registrado y aprobado en el <strong class="text-white/90">Registro y Evaluación Unificada de Facilitadores (REUF)</strong> del Servicio Nacional de Capacitación y Empleo (SENCE).
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 items-start">
-      <div class="relative">
-        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-          <img src="{% static 'landing/img/cert.png' %}" alt="Certificado SENCE" class="w-full h-auto" />
-        </div>
-        <div class="absolute -top-4 -right-4 bg-gradient-to-br from-[#8B5CF6] to-[#4A148C] text-white rounded-full p-6 shadow-2xl border-4 border-[#0A1628]">
-          🏅
+    <div class="space-y-16 fade-up text-center">
+
+      <!-- ÁREAS FORMATIVAS -->
+      <div>
+        <h3 class="text-2xl text-white mb-6 flex justify-center items-center gap-2">
+          Áreas formativas
+        </h3>
+
+        <div class="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+          <span class="hero-badge hero-badge--secondary">Full Stack (Python y Java)</span>
+          <span class="hero-badge hero-badge--secondary">Desarrollo Front-End</span>
+          <span class="hero-badge hero-badge--outline">UX/UI</span>
+          <span class="hero-badge hero-badge--outline">Hacking Ético y Ciberseguridad</span>
+          <span class="hero-badge hero-badge--secondary">Ciencia de Datos</span>
         </div>
       </div>
 
-      <div class="space-y-8 fade-up">
-        <div>
-          <h3 class="text-2xl text-white mb-4 flex items-center gap-2">
-            <span class="w-1 h-6 bg-gradient-to-b from-[#8B5CF6] to-[#4A148C] rounded-full inline-block"></span>
-            Áreas formativas
-          </h3>
-          <div class="space-y-3">
-            <div class="list-card">✓ Desarrollo de Aplicaciones Full Stack (Python y Java)</div>
-            <div class="list-card">✓ Desarrollo Front-End</div>
-            <div class="list-card">✓ UX/UI</div>
-            <div class="list-card">✓ Hacking Ético y Ciberseguridad</div>
-            <div class="list-card">✓ Ciencia de Datos</div>
+      <!-- FORMACIÓN BASADA EN -->
+      <div>
+        <h3 class="text-2xl text-white mb-8 flex justify-center items-center gap-2">
+          Formación basada en
+        </h3>
+
+        <div class="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto text-left">
+          
+          <div class="mini-card">
+            <div
+              class="mini-ico"
+              style="
+                background: rgba(139,92,246,.12);
+                border: 1px solid rgba(139,92,246,.35);
+                color: #8B5CF6;
+              "
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+
+            <h4 class="text-white font-medium mb-1">Proyectos reales</h4>
+            <p class="text-white/70 text-sm">
+              Aplicación práctica de conceptos en escenarios reales del mundo laboral.
+            </p>
           </div>
+
+          <div class="mini-card">
+            <div
+              class="mini-ico"
+              style="
+                background: rgba(139,92,246,.12);
+                border: 1px solid rgba(139,92,246,.35);
+                color: #8B5CF6;
+              "
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 3.12793C16.8578 3.3503 17.6174 3.85119 18.1597 4.55199C18.702 5.25279 18.9962 6.11382 18.9962 6.99993C18.9962 7.88604 18.702 8.74707 18.1597 9.44787C17.6174 10.1487 16.8578 10.6496 16 10.8719"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M22 20.9999V18.9999C21.9993 18.1136 21.7044 17.2527 21.1614 16.5522C20.6184 15.8517 19.8581 15.3515 19 15.1299"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+
+            <h4 class="text-white font-medium mb-1">Metodologías activas</h4>
+            <p class="text-white/70 text-sm">
+              Aprendizaje participativo, colaborativo y con acompañamiento constante.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <div
+              class="mini-ico"
+              style="
+                background: rgba(139,92,246,.12);
+                border: 1px solid rgba(139,92,246,.35);
+                color: #8B5CF6;
+              "
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9 12L11 14L15 10"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+
+            <h4 class="text-white font-medium mb-1">Evaluación por competencias</h4>
+            <p class="text-white/70 text-sm">
+              Enfoque en habilidades medibles y aplicables al trabajo real.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <div
+              class="mini-ico"
+              style="
+                background: rgba(139,92,246,.12);
+                border: 1px solid rgba(139,92,246,.35);
+                color: #8B5CF6;
+              "
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M15.477 12.8901L16.992 21.4161C17.009 21.5165 16.9949 21.6197 16.9516 21.7119C16.9084 21.8041 16.838 21.8808 16.7499 21.9319C16.6619 21.983 16.5603 22.006 16.4588 21.9978C16.3573 21.9897 16.2607 21.9507 16.182 21.8861L12.602 19.1991C12.4292 19.07 12.2192 19.0003 12.0035 19.0003C11.7878 19.0003 11.5778 19.07 11.405 19.1991L7.819 21.8851C7.74032 21.9496 7.64386 21.9885 7.54249 21.9967C7.44112 22.0049 7.33967 21.982 7.25166 21.931C7.16365 21.88 7.09327 21.8035 7.04991 21.7115C7.00656 21.6195 6.99228 21.5165 7.009 21.4161L8.523 12.8901"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 14C15.3137 14 18 11.3137 18 8C18 4.68629 15.3137 2 12 2C8.68629 2 6 4.68629 6 8C6 11.3137 8.68629 14 12 14Z"
+                  stroke="#8B5CF6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+
+            <h4 class="text-white font-medium mb-1">Enfoque en empleabilidad</h4>
+            <p class="text-white/70 text-sm">
+              Preparación directa para portafolio, entrevistas y desempeño laboral.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Métricas destacadas (FULL BLEED / sin principio ni fin) -->
+  <div class="stats-flow stats-flow--bleed mt-10" role="region" aria-label="Métricas destacadas en carrusel infinito">
+    <div class="stats-flow__mask">
+      <div class="stats-flow__track">
+
+        <!-- set 1 -->
+        <div class="metric">
+          <div class="metric__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M10 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16 20v-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M22 20v-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="metric__n">+500</div>
+          <div class="metric__t">personas formadas</div>
         </div>
 
-        <div>
-          <h3 class="text-2xl text-white mb-4 flex items-center gap-2">
-            <span class="w-1 h-6 bg-gradient-to-b from-[#4A148C] to-[#8B5CF6] rounded-full inline-block"></span>
-            Formación basada en
-          </h3>
-
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div class="mini-card">
-              <div class="mini-ico">🎯</div>
-              <h4 class="text-white font-medium mb-1">Proyectos reales</h4>
-              <p class="text-white/70 text-sm">Aplicación práctica de conceptos en proyectos del mundo laboral</p>
-            </div>
-            <div class="mini-card">
-              <div class="mini-ico">👥</div>
-              <h4 class="text-white font-medium mb-1">Metodologías activas</h4>
-              <p class="text-white/70 text-sm">Aprendizaje participativo y colaborativo</p>
-            </div>
-            <div class="mini-card">
-              <div class="mini-ico">✅</div>
-              <h4 class="text-white font-medium mb-1">Evaluación por competencias</h4>
-              <p class="text-white/70 text-sm">Enfoque en habilidades aplicables y medibles</p>
-            </div>
-            <div class="mini-card">
-              <div class="mini-ico">🏆</div>
-              <h4 class="text-white font-medium mb-1">Enfoque en empleabilidad</h4>
-              <p class="text-white/70 text-sm">Preparación directa para el mercado laboral</p>
-            </div>
+        <div class="metric">
+          <div class="metric__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
           </div>
+          <div class="metric__n">+6</div>
+          <div class="metric__t">años de experiencia</div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 pt-4">
-          <div class="stat stat-1">
-            <div class="text-4xl font-bold text-white mb-1">500+</div>
-            <div class="text-white/70">Personas formadas</div>
+        <div class="metric">
+          <div class="metric__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 19c-4 1-4-2-6-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M15 19v-3.5c0-1 .5-2 1.5-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M9 19v-4c0-2-1-3-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16.5 13c2 0 3.5-1.6 3.5-3.6 0-1.4-.7-2.6-1.8-3.2.1-.3.1-.7.1-1 0-1.7-1.3-3-3-3-1 0-2 .5-2.5 1.3-.7-.5-1.6-.8-2.5-.8-2.2 0-4 1.8-4 4 0 .4.1.9.2 1.3C5.5 8.7 5 9.8 5 11c0 2.2 1.8 4 4 4h7.5Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
-          <div class="stat stat-2">
-            <div class="text-4xl font-bold text-white mb-1">100%</div>
-            <div class="text-white/70">Enfoque práctico</div>
-          </div>
+          <div class="metric__n">+300</div>
+          <div class="metric__t">proyectos en GitHub</div>
         </div>
+
+        <div class="metric">
+          <div class="metric__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 4h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 16v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="metric__n">+2900</div>
+          <div class="metric__t">horas de capacitación</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 19.5V6.5A2.5 2.5 0 0 1 6.5 4H20v16H6.5A2.5 2.5 0 0 0 4 22.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="metric__n">+1000</div>
+          <div class="metric__t">cursos y certificaciones</div>
+        </div>
+
+        <!-- set 2 (duplicado exacto para loop infinito real) -->
+        <div class="metric">
+          <div class="metric__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M10 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16 20v-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M22 20v-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="metric__n">+500</div>
+          <div class="metric__t">personas formadas</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="metric__n">+6</div>
+          <div class="metric__t">años de experiencia</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 19c-4 1-4-2-6-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M15 19v-3.5c0-1 .5-2 1.5-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M9 19v-4c0-2-1-3-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M16.5 13c2 0 3.5-1.6 3.5-3.6 0-1.4-.7-2.6-1.8-3.2.1-.3.1-.7.1-1 0-1.7-1.3-3-3-3-1 0-2 .5-2.5 1.3-.7-.5-1.6-.8-2.5-.8-2.2 0-4 1.8-4 4 0 .4.1.9.2 1.3C5.5 8.7 5 9.8 5 11c0 2.2 1.8 4 4 4h7.5Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="metric__n">+300</div>
+          <div class="metric__t">proyectos en GitHub</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 4h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 16v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="metric__n">+2900</div>
+          <div class="metric__t">horas de capacitación</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 19.5V6.5A2.5 2.5 0 0 1 6.5 4H20v16H6.5A2.5 2.5 0 0 0 4 22.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="metric__n">+1000</div>
+          <div class="metric__t">cursos y certificaciones</div>
+        </div>
+
       </div>
     </div>
   </div>
+
 </section>
