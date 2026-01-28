@@ -11,21 +11,30 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+load_dotenv(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o8@!_o!f1(pnbg0v4=8_4g^gn&v%=mb&)hx#t&4gnse*at+4gh'
+SECRET_KEY = os.getenv(
+    "DJANGO_SECRET_KEY",
+    "django-insecure-o8@!_o!f1(pnbg0v4=8_4g^gn&v%=mb&)hx#t&4gnse*at+4gh",
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DJANGO_DEBUG", "true").lower() in ("1", "true", "yes", "on")
 
-ALLOWED_HOSTS = []
+# IMPORTANT: for production set DJANGO_ALLOWED_HOSTS="blandskron.com,www.blandskron.com"
+ALLOWED_HOSTS = [
+    h.strip() for h in os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",") if h.strip()
+]
 
 
 # Application definition
@@ -119,3 +128,38 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
+
+# =========================
+# Email (cPanel / SSL 465)
+# =========================
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+# cPanel values (recommended defaults)
+EMAIL_HOST = os.getenv("EMAIL_HOST", "mail.blandskron.com")
+EMAIL_PORT = int(os.getenv("EMAIL_PORT", "465"))
+
+# For port 465 use SSL (NOT TLS)
+EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL", "true").lower() in ("1", "true", "yes", "on")
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "false").lower() in ("1", "true", "yes", "on")
+
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "noreply@blandskron.com")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
+
+# Always use a real domain sender (avoid localhost)
+DEFAULT_FROM_EMAIL = os.getenv(
+    "DEFAULT_FROM_EMAIL",
+    "Blandskron <noreply@blandskron.com>",
+)
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
+EMAIL_TIMEOUT = int(os.getenv("EMAIL_TIMEOUT", "20"))
+EMAIL_SUBJECT_PREFIX = os.getenv("EMAIL_SUBJECT_PREFIX", "[Blandskron] ")
+
+# Where notifications arrive (your inbox)
+CONTACT_NOTIFY_EMAIL = os.getenv("CONTACT_NOTIFY_EMAIL", DEFAULT_FROM_EMAIL)
+
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

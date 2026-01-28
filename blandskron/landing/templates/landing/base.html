@@ -27,9 +27,9 @@
   {% include "landing/partials/_header.html" %}
 
   <!-- Flash messages -->
-  <div class="fixed top-20 left-1/2 -translate-x-1/2 z-[999] w-[92%] max-w-xl space-y-2">
+  <div id="flashWrap" class="fixed top-20 left-1/2 -translate-x-1/2 z-[999] w-[92%] max-w-xl space-y-2">
     {% for message in messages %}
-      <div class="rounded-xl border border-white/10 bg-white/10 backdrop-blur px-4 py-3 text-sm">
+      <div class="flash-item rounded-xl border border-white/10 bg-white/10 backdrop-blur px-4 py-3 text-sm transition-all duration-500">
         {{ message }}
       </div>
     {% endfor %}
@@ -79,33 +79,22 @@
       });
     })();
 
-    // Active link highlight (IntersectionObserver)
-    (function () {
-      const sections = ["home","about","services","certifications","contact"]
-        .map(id => document.getElementById(id))
-        .filter(Boolean);
+      (function () {
+        const wrap = document.getElementById("flashWrap");
+        if (!wrap) return;
 
-      const links = Array.from(document.querySelectorAll(".nav-link"));
+        const items = wrap.querySelectorAll(".flash-item");
+        if (!items.length) return;
 
-      function setActive(id) {
-        links.forEach((el) => {
-          const target = el.getAttribute("data-scroll");
-          if (target === id) el.classList.add("is-active");
-          else el.classList.remove("is-active");
-        });
-      }
+        setTimeout(() => {
+          items.forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(-6px)";
+          });
 
-      if (!("IntersectionObserver" in window) || sections.length === 0) return;
-
-      const obs = new IntersectionObserver((entries) => {
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target?.id) setActive(visible.target.id);
-      }, { root: null, threshold: [0.2, 0.35, 0.5, 0.65] });
-
-      sections.forEach(s => obs.observe(s));
-    })();
+          setTimeout(() => wrap.remove(), 600);
+        }, 5000);
+      })();
   </script>
 </body>
 </html>

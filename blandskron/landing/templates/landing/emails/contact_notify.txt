@@ -1,0 +1,7 @@
+Nuevo contacto desde la web
+
+Nombre: {{ name }}
+Email: {{ email }}
+
+Mensaje:
+{{ message }}

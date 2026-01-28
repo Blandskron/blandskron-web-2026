@@ -1,0 +1,8 @@
+Hola {{ name }},
+
+Gracias por contactarme. Ya recibí tu mensaje y te responderé lo antes posible.
+
+Tu mensaje:
+{{ message }}
+
+— Blandskron
