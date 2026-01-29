@@ -1,0 +1,163 @@
+<!--
+Blandskron — Open Project
+
+Este proyecto es de uso abierto para fines profesionales y educativos.
+Puedes reutilizarlo y adaptarlo libremente.
+
+Si lo usas públicamente, mantén los créditos originales.
+
+https://blandskron.com
+-->
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="dark">
+  <meta name="supported-color-schemes" content="dark">
+  <title>Confirmación de recepción</title>
+</head>
+
+<body style="margin:0;background:#0f0f0f;font-family:Arial,Helvetica,sans-serif;color:#ffffff;">
+  <!-- Preheader (oculto) -->
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">
+    Hemos recibido tu mensaje. Te responderemos a la brevedad.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0f0f0f;">
+    <tr>
+      <td align="center" style="padding:28px 16px;">
+
+        <!-- Container -->
+        <table role="presentation" width="640" cellpadding="0" cellspacing="0" style="width:100%;max-width:640px;">
+          <tr>
+            <td style="
+              border:1px solid rgba(255,255,255,.10);
+              background:rgba(15,15,15,.75);
+              border-radius:16px;
+              box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
+              overflow:hidden;
+            ">
+
+              <!-- Header -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:18px 22px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08);">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td align="left" style="font-size:14px;font-weight:700;letter-spacing:.2px;">
+                          Blandskron
+                        </td>
+                        <td align="right" style="font-size:12px;color:rgba(255,255,255,.65);">
+                          Confirmación automática
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Body -->
+              <div style="padding:22px 22px 8px 22px;">
+
+                <!-- Badge -->
+                <div style="
+                  display:inline-block;
+                  padding:7px 12px;
+                  border-radius:999px;
+                  background:rgba(139,92,246,.16);
+                  border:1px solid rgba(139,92,246,.40);
+                  color:#EDE9FE;
+                  font-size:12px;
+                  font-weight:700;
+                  letter-spacing:.2px;
+                ">
+                  Mensaje recibido
+                </div>
+
+                <h1 style="margin:14px 0 6px 0;line-height:1.2;font-size:26px;letter-spacing:-.02em;">
+                  Hola {{ name }},
+                </h1>
+
+                <p style="margin:0 0 14px 0;color:rgba(255,255,255,.78);line-height:1.7;font-size:14px;">
+                  Gracias por escribir a Blandskron. Hemos recibido tu mensaje correctamente y
+                  te responderé a la brevedad.
+                </p>
+
+                <!-- Info row -->
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:12px 0 6px 0;">
+                  <tr>
+                    <td style="padding:12px 14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);border-radius:12px;">
+                      <p style="margin:0;color:rgba(255,255,255,.70);font-size:12px;line-height:1.6;">
+                        <strong style="color:rgba(255,255,255,.92);">Referencia:</strong>
+                        {{ reference|default:"-" }}
+                        <span style="display:inline-block;width:10px;"></span>
+                        <strong style="color:rgba(255,255,255,.92);">Fecha:</strong>
+                        {{ created_at|default:"-" }}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <div style="margin:16px 0;border-top:1px solid rgba(255,255,255,.10)"></div>
+
+                <!-- Message box -->
+                <div style="padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);">
+                  <p style="margin:0 0 8px 0;color:rgba(255,255,255,.92);font-size:13px;font-weight:700;">
+                    Copia de tu mensaje
+                  </p>
+                  <p style="margin:0;color:rgba(255,255,255,.74);font-size:13px;line-height:1.75;white-space:pre-line;">
+                    {{ message }}
+                  </p>
+                </div>
+
+                <!-- CTA -->
+                <table role="presentation" cellpadding="0" cellspacing="0" style="margin:16px 0 0 0;">
+                  <tr>
+                    <td>
+                      <a href="https://blandskron.com"
+                         style="
+                           display:inline-block;
+                           text-decoration:none;
+                           border-radius:14px;
+                           padding:10px 14px;
+                           border:1px solid rgba(139,92,246,.45);
+                           background:rgba(139,92,246,.10);
+                           color:rgba(255,255,255,.92);
+                           font-size:13px;
+                           font-weight:700;
+                           letter-spacing:.15px;
+                         ">
+                        Visitar Blandskron.com
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <p style="margin:14px 0 0 0;color:rgba(255,255,255,.55);font-size:12px;line-height:1.6;">
+                  Este correo es automático. Si necesitas agregar información, responde a este mensaje.
+                </p>
+              </div>
+
+              <!-- Footer -->
+              <div style="padding:14px 22px;background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.08);">
+                <p style="margin:0;color:rgba(255,255,255,.62);font-size:12px;line-height:1.6;">
+                  Blandskron • Tecnología · Formación · Innovación
+                </p>
+                <p style="margin:6px 0 0 0;color:rgba(255,255,255,.50);font-size:12px;line-height:1.6;">
+                  Si no fuiste tú quien envió este mensaje, puedes ignorar este correo.
+                </p>
+              </div>
+
+            </td>
+          </tr>
+        </table>
+        <!-- /Container -->
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

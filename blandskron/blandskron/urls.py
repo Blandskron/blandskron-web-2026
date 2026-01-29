@@ -1,23 +1,23 @@
 """
-URL configuration for blandskron project.
+Blandskron — Open Project
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+Este código forma parte de un proyecto abierto de uso profesional y educativo.
+Puede ser utilizado, modificado y distribuido libremente.
+
+Si utilizas este código en proyectos públicos o comerciales,
+se agradece mantener los créditos originales.
+
+https://blandskron.com
 """
+
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('landing.urls')),
+    path("admin/", admin.site.urls),
+    path("", include("landing.urls")),
+
+    # Catch-all: cualquier ruta no válida → home
+    path("<path:unused_path>", RedirectView.as_view(url="/", permanent=False)),
 ]

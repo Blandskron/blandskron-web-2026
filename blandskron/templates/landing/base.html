@@ -1,0 +1,169 @@
+{% load static %}
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {# ========= SEO por página ========= #}
+  <title>{% block title %}Blandskron | Transformación Digital Empresarial{% endblock %}</title>
+
+  <meta name="description" content="{% block meta_description %}
+  Blandskron es una startup tecnológica que impulsa la transformación digital con soluciones en ciberseguridad, DevOps y arquitectura de software. Desarrollamos plataformas seguras, escalables y automatizadas basadas en microservicios, inteligencia artificial y tecnologías modernas.
+  {% endblock %}" />
+
+  <meta name="keywords" content="{% block meta_keywords %}
+  Blandskron,ciberseguridad,DevOps,arquitectura de software,automatización cloud,microservicios,FastAPI,Spring Boot,Docker,CI/CD,IA aplicada,PostgreSQL,Azure,transformación digital,desarrollo de software empresarial
+  {% endblock %}" />
+
+  <meta name="author" content="Blandskron" />
+  <meta name="robots" content="index, follow" />
+
+  {# ========= Canonical ========= #}
+  <link rel="canonical" href="{% block canonical %}https://www.blandskron.com/{% endblock %}" />
+
+  {# ========= Open Graph ========= #}
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{% block og_url %}https://www.blandskron.com/{% endblock %}" />
+  <meta property="og:title" content="{% block og_title %}Blandskron | Transformación Digital Empresarial{% endblock %}" />
+  <meta property="og:description" content="{% block og_description %}
+  Socios estratégicos en transformación digital. Ciberseguridad, DevOps y software moderno para empresas en Chile y LATAM.
+  {% endblock %}" />
+  <meta property="og:image" content="{% block og_image %}https://www.blandskron.com/og-image.png{% endblock %}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="og:site_name" content="Blandskron" />
+
+  {# ========= Twitter Card ========= #}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{% block twitter_title %}Blandskron | Transformación Digital Empresarial{% endblock %}" />
+  <meta name="twitter:description" content="{% block twitter_description %}
+  Soluciones empresariales en ciberseguridad, DevOps y arquitectura de software moderna.
+  {% endblock %}" />
+  <meta name="twitter:image" content="{% block twitter_image %}https://www.blandskron.com/og-image.png{% endblock %}" />
+
+  {# ========= Favicons ========= #}
+  <link rel="icon" href="{% static 'img/favicon.ico' %}">
+  <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+
+  {# ========= Performance Preconnect ========= #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+
+  {# ========= Google Fonts ========= #}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"
+  >
+
+  {# ========= Tailwind (CDN temporal) ========= #}
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+  {# ========= Google Analytics GA4 (2 IDs, 1 carga) ========= #}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XS616SHMD7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XS616SHMD7');
+    gtag('config', 'G-0HTRJHD9N0');
+  </script>
+
+  {# ========= Microsoft Clarity ========= #}
+  <script>
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "u59txxo2oo");
+  </script>
+
+  {# ========= CSS ========= #}
+  <link rel="stylesheet" href="{% static 'css/core.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/site.css' %}" />
+
+  {# ========= Extra Head por página ========= #}
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-[#0f0f0f] text-white overflow-x-hidden">
+
+  {% include "landing/partials/_floating.html" %}
+  {% include "landing/partials/_header.html" %}
+
+  <!-- Flash messages -->
+  <div id="flashWrap" class="fixed top-20 left-1/2 -translate-x-1/2 z-[999] w-[92%] max-w-xl space-y-2">
+    {% for message in messages %}
+      <div class="flash-item rounded-xl border border-white/10 bg-white/10 backdrop-blur px-4 py-3 text-sm transition-all duration-500">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+
+  {% block content %}{% endblock %}
+
+  <script>
+    // Smooth scroll
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-scroll]");
+      if (!btn) return;
+
+      const id = btn.getAttribute("data-scroll");
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      // Close mobile menu if open
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileBtn = document.getElementById("mobileMenuBtn");
+      if (mobileMenu && mobileBtn && !mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.add("hidden");
+        mobileBtn.setAttribute("aria-expanded", "false");
+      }
+
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // Mobile menu toggle
+    (function () {
+      const btn = document.getElementById("mobileMenuBtn");
+      const menu = document.getElementById("mobileMenu");
+      if (!btn || !menu) return;
+
+      btn.addEventListener("click", () => {
+        const isHidden = menu.classList.contains("hidden");
+        menu.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", String(isHidden));
+      });
+
+      // Close on resize to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          menu.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    })();
+
+      (function () {
+        const wrap = document.getElementById("flashWrap");
+        if (!wrap) return;
+
+        const items = wrap.querySelectorAll(".flash-item");
+        if (!items.length) return;
+
+        setTimeout(() => {
+          items.forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(-6px)";
+          });
+
+          setTimeout(() => wrap.remove(), 600);
+        }, 5000);
+      })();
+  </script>
+</body>
+</html>

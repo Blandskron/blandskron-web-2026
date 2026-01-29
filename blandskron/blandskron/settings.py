@@ -8,6 +8,16 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
+
+Blandskron — Open Project
+
+Este código forma parte de un proyecto abierto de uso profesional y educativo.
+Puede ser utilizado, modificado y distribuido libremente.
+
+Si utilizas este código en proyectos públicos o comerciales,
+se agradece mantener los créditos originales.
+
+https://blandskron.com
 """
 
 from pathlib import Path
@@ -113,9 +123,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = "es-cl"
+TIME_ZONE = "America/Santiago"
 
 USE_I18N = True
 
@@ -126,9 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [BASE_DIR / 'static/']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
 
 
 # =========================
@@ -136,18 +145,21 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # =========================
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
-# cPanel values (recommended defaults)
 EMAIL_HOST = os.getenv("EMAIL_HOST", "mail.blandskron.com")
 EMAIL_PORT = int(os.getenv("EMAIL_PORT", "465"))
 
-# For port 465 use SSL (NOT TLS)
-EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL", "true").lower() in ("1", "true", "yes", "on")
-EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "false").lower() in ("1", "true", "yes", "on")
+# Regla segura: 465 => SSL sí / TLS no
+if EMAIL_PORT == 465:
+    EMAIL_USE_SSL = True
+    EMAIL_USE_TLS = False
+else:
+    # si usas 587 típicamente TLS true
+    EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL", "false").lower() in ("1", "true", "yes", "on")
+    EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "true").lower() in ("1", "true", "yes", "on")
 
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "noreply@blandskron.com")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
 
-# Always use a real domain sender (avoid localhost)
 DEFAULT_FROM_EMAIL = os.getenv(
     "DEFAULT_FROM_EMAIL",
     "Blandskron <noreply@blandskron.com>",
@@ -156,10 +168,4 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 EMAIL_TIMEOUT = int(os.getenv("EMAIL_TIMEOUT", "20"))
 EMAIL_SUBJECT_PREFIX = os.getenv("EMAIL_SUBJECT_PREFIX", "[Blandskron] ")
-
-# Where notifications arrive (your inbox)
 CONTACT_NOTIFY_EMAIL = os.getenv("CONTACT_NOTIFY_EMAIL", DEFAULT_FROM_EMAIL)
-
-
-# Default primary key field type
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
