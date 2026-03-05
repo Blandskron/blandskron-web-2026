@@ -2,24 +2,28 @@ version: '3.8'
 
 services:
   web:
-    image: blandskron/portafolioweb:tagname
-    command: /app/docker-entrypoint.sh
+    image: blandskron/portafolioweb:latest
+    # Carga automática de todas tus variables (Email, Secret Key, etc.)
+    env_file:
+      - .env
+    
     ports:
       - "8000:8000"
+    
     environment:
-      - DJANGO_SUPERUSER_USERNAME=${DJANGO_SUPERUSER_USERNAME}
-      - DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL}
-      - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
-      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
-      - DJANGO_DEBUG=${DJANGO_DEBUG:-false}
-      - DJANGO_ALLOWED_HOSTS=${DJANGO_ALLOWED_HOSTS:-0.0.0.0}
-      - EMAIL_HOST=${EMAIL_HOST}
-      - EMAIL_PORT=${EMAIL_PORT}
-      - EMAIL_HOST_USER=${EMAIL_HOST_USER}
-      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+      - DJANGO_DEBUG=${DJANGO_DEBUG:-False}
+    
     volumes:
-      - static_volume:/app/staticfiles
-      - ./db.sqlite3:/app/db.sqlite3
+      # Persistencia de Base de Datos: Docker gestiona el archivo, no Windows.
+      # Esto evita el error de montaje que tuviste.
+      - sqlite_data:/app/blandskron
+      # Persistencia de archivos estáticos para WhiteNoise
+      - static_volume:/app/blandskron/staticfiles
+    
+    # Ruta absoluta al script que definimos en el Dockerfile
+    command: /app/docker-entrypoint.sh
+    restart: always
 
 volumes:
+  sqlite_data:
   static_volume:
