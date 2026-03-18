@@ -1,4 +1,4 @@
-{% extends "landing/base.html" %}
+{% extends "base.html" %}
 
 {% block title %}Blandskron | Ciberseguridad, DevOps y Desarrollo de Software{% endblock %}
 
@@ -14,6 +14,7 @@ Socios estratégicos en transformación digital: ciberseguridad, DevOps y arquit
 {% endblock %}
 
 {% block content %}
+  {% include "landing/partials/_floating.html" %}
   {% include "landing/partials/_hero.html" %}
   {% include "landing/partials/_about.html" %}
   {% include "landing/partials/_services.html" %}

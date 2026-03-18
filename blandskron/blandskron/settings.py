@@ -58,6 +58,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'landing',
+    'blog',
+]
+
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.extra',      # Tablas, abreviaciones, etc.
+    'markdown.extensions.codehilite', # Resaltado de sintaxis
+    'markdown.extensions.toc',        # Tabla de contenidos (opcional)
 ]
 
 MIDDLEWARE = [

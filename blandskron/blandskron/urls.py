@@ -17,6 +17,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("landing.urls")),
+    path("blog/", include("blog.urls")),
 
     # Catch-all: cualquier ruta no válida → home
     path("<path:unused_path>", RedirectView.as_view(url="/", permanent=False)),
