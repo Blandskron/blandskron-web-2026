@@ -11,10 +11,11 @@ https://blandskron.com
 """
 
 from django.urls import path
-from .views import home
+from .views import home, privacy_policy
 
 app_name = "landing"
 
 urlpatterns = [
     path("", home, name="home"),
+    path("privacidad/", privacy_policy, name="privacy_policy"),
 ]

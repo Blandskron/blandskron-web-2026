@@ -43,3 +43,9 @@ class ContactForm(forms.Form):
             }
         ),
     )
+
+    privacy_accepted = forms.BooleanField(
+        label="He leído y acepto la política de privacidad",
+        required=True,
+        error_messages={"required": "Debes aceptar la política de privacidad para continuar."}
+    )

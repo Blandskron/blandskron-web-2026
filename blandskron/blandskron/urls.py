@@ -15,7 +15,8 @@ from django.urls import include, path
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    # Cambiar la ruta de admin previene ataques automatizados básicos
+    path("blandskron-panel/", admin.site.urls),
     path("", include("landing.urls")),
     path("blog/", include("blog.urls")),
 

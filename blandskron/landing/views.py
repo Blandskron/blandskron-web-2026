@@ -106,3 +106,7 @@ def home(request):
     # GET
     form = ContactForm()
     return render(request, "landing/index.html", {"form": form})
+
+
+def privacy_policy(request):
+    return render(request, "landing/privacy.html")

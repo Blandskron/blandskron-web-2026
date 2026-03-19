@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Política de Privacidad | Blandskron{% endblock %}
+
+{% block content %}
+<main class="bg-[#0f0f0f] min-h-screen pt-32 pb-20 relative overflow-hidden" style="padding-top: calc(var(--spacing) * 35);">
+  <div class="absolute inset-0 grid-soft"></div>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-white/80 fade-up">
+    
+    <div class="mb-12 border-b border-white/10 pb-8">
+      <h1 class="text-3xl sm:text-4xl text-white mb-3">Política de Privacidad</h1>
+      <p class="text-white/50 text-sm">Última actualización: Marzo 2026</p>
+    </div>
+
+    <div class="space-y-10 text-base leading-relaxed">
+      
+      <section>
+        <h2 class="text-xl text-white font-medium mb-3">1. Responsable del Tratamiento</h2>
+        <p>El responsable del tratamiento de los datos personales recabados a través de este sitio web es <strong>Bastián Landskron</strong>. Puedes contactarme en cualquier momento a través del correo electrónico: <a href="mailto:contacto@blandskron.com" class="text-[#8B5CF6] hover:text-[#A78BFA] underline transition-colors">contacto@blandskron.com</a>.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl text-white font-medium mb-3">2. Datos que recopilamos</h2>
+        <p>A través de nuestro formulario de contacto solicitamos exclusivamente los datos necesarios para poder atender tu petición:</p>
+        <ul class="list-disc list-inside mt-3 space-y-1 ml-4 text-white/70">
+          <li>Nombre completo</li>
+          <li>Dirección de correo electrónico (Email)</li>
+          <li>Contenido del mensaje</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl text-white font-medium mb-3">3. Finalidad y Legitimación</h2>
+        <p>Los datos que nos facilitas se utilizan con el único propósito de <strong>responder a tu consulta, evaluar tu proyecto o enviarte la información solicitada</strong>. No utilizamos tus datos para enviar publicidad no deseada (spam) ni los compartimos o vendemos a terceros.</p>
+        <p class="mt-3">La base legal para este tratamiento es tu <strong>consentimiento expreso</strong>. Al marcar la casilla de aceptación en el formulario y hacer clic en enviar, otorgas tu permiso explícito para que procesemos tus datos con esta finalidad.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl text-white font-medium mb-3">4. Almacenamiento y Seguridad</h2>
+        <p>Tus datos personales se almacenan de forma segura en nuestra base de datos y los servidores de correo electrónico. Implementamos medidas técnicas y organizativas (como conexiones cifradas HTTPS/SSL) para garantizar la seguridad de tus datos y evitar su alteración, pérdida, tratamiento o acceso no autorizado.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl text-white font-medium mb-3">5. Derechos del Usuario</h2>
+        <p>En todo momento tienes pleno control sobre tu información. De acuerdo con las normativas vigentes, tienes derecho a:</p>
+        <ul class="list-disc list-inside mt-3 space-y-1 ml-4 text-white/70">
+          <li><strong>Acceder</strong> a los datos personales que tenemos de ti.</li>
+          <li><strong>Rectificar</strong> los datos que sean inexactos o incompletos.</li>
+          <li><strong>Suprimir / Cancelar</strong> tus datos (derecho al olvido) cuando ya no sean necesarios para los fines que fueron recogidos.</li>
+        </ul>
+        <p class="mt-4">Para ejercer cualquiera de estos derechos, simplemente envíanos un email a <a href="mailto:contacto@blandskron.com" class="text-[#8B5CF6] hover:text-[#A78BFA] underline transition-colors">contacto@blandskron.com</a> indicando tu solicitud.</p>
+      </section>
+      
+      <div class="mt-16 pt-8 border-t border-white/10">
+        <a href="/" class="inline-flex items-center gap-2 text-[#8B5CF6] hover:text-[#A78BFA] transition-colors">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.8334 10H4.16675" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.0001 15.8334L4.16675 10L10.0001 4.16669" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Volver al inicio</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+{% include "landing/partials/_section-separator.html" %}
+{% include "landing/partials/_footerMini.html" %}
+{% endblock %}
