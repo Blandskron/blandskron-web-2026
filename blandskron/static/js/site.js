@@ -64,8 +64,19 @@
           reveal(entry.target);
           currentObserver.unobserve(entry.target);
         });
-      }, { threshold: 0.12, rootMargin: "0px 0px -36px 0px" });
+      }, {
+        // Tall articles can never reach a 12% intersection ratio. Any visible
+        // portion is enough to activate the optional transform enhancement.
+        threshold: 0,
+        rootMargin: "0px 0px -36px 0px"
+      });
       revealElements.forEach(function (element) { observer.observe(element); });
+
+      // Keep the page usable if an observer callback is delayed by hydration,
+      // syntax highlighting, math rendering, or a browser-specific issue.
+      window.setTimeout(function () {
+        revealElements.forEach(reveal);
+      }, 1500);
     }
   }
 }());

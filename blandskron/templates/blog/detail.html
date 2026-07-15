@@ -7,8 +7,8 @@
     <div class="hero-grad absolute inset-0 opacity-40"></div>
     <div class="grid-pattern absolute inset-0"></div>
 
-    <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 fade-up">
-        <header class="mb-12">
+    <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <header class="mb-12 fade-up">
             <a href="{% url 'blog:blog_list' %}" class="hero-badge hero-badge--outline mb-6">
                 ← Volver al blog
             </a>
@@ -26,6 +26,7 @@
         </header>
 
         <article class="blog-content">
+            {# El contenido editorial nunca depende de una animación para ser visible. #}
             {{ post.content|markdown_to_html }}
         </article>
 
