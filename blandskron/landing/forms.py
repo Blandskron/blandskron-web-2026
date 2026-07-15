@@ -23,6 +23,9 @@ class ContactForm(forms.Form):
         ),
     )
 
+    # Campo trampa para bots; no se muestra a usuarios reales.
+    website = forms.CharField(required=False, widget=forms.HiddenInput)
+
     email = forms.EmailField(
         max_length=150,
         label="Email",

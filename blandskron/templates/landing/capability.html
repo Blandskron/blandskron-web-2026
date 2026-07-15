@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block title %}{{ capability_name }} | Blandskron{% endblock %}
+{% block meta_description %}{{ capability_description }}{% endblock %}
+{% block content %}<main class="legal-page"><article class="legal-page__content fade-up"><p class="legal-page__eyebrow">Capacidad Blandskron</p><h1>{{ capability_name }}</h1><p class="legal-page__updated">Ingeniería aplicada para Chile y Latinoamérica</p><p class="text-lg leading-relaxed text-white/70">{{ capability_description }}</p><section><h2>Cómo aportamos</h2><p>Descubrimos el problema, diseñamos una solución viable, construimos con buenas prácticas y evolucionamos junto a tu equipo.</p></section><section><h2>Tecnologías relacionadas</h2><p>{{ capability_technology }}</p></section><a class="btn-outline mt-6" href="/#contact">Solicitar evaluación técnica →</a></article></main>{% include "landing/partials/_footerMini.html" %}{% endblock %}

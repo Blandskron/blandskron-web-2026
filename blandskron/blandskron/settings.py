@@ -22,6 +22,10 @@ https://blandskron.com
 
 from pathlib import Path
 import os
+import secrets
+import sys
+
+from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
 
 
@@ -33,18 +37,21 @@ load_dotenv(BASE_DIR / ".env")
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv(
-    "DJANGO_SECRET_KEY",
-    "django-insecure-o8@!_o!f1(pnbg0v4=8_4g^gn&v%=mb&)hx#t&4gnse*at+4gh",
-)
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DJANGO_DEBUG", "true").lower() in ("1", "true", "yes", "on")
+DEBUG = os.getenv("DJANGO_DEBUG", "false").lower() in ("1", "true", "yes", "on")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+if not SECRET_KEY:
+    if DEBUG:
+        SECRET_KEY = secrets.token_urlsafe(50)
+    else:
+        raise ImproperlyConfigured("DJANGO_SECRET_KEY must be set when DJANGO_DEBUG is false")
 
 # IMPORTANT: for production set DJANGO_ALLOWED_HOSTS="blandskron.com,www.blandskron.com"
 ALLOWED_HOSTS = [
     h.strip() for h in os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",") if h.strip()
 ]
+IS_TESTING = "test" in sys.argv
+if not DEBUG and not ALLOWED_HOSTS and not IS_TESTING:
+    raise ImproperlyConfigured("DJANGO_ALLOWED_HOSTS must be set when DJANGO_DEBUG is false")
 
 
 # Application definition
@@ -61,14 +68,9 @@ INSTALLED_APPS = [
     'blog',
 ]
 
-MARKDOWNX_MARKDOWN_EXTENSIONS = [
-    'markdown.extensions.extra',      # Tablas, abreviaciones, etc.
-    'markdown.extensions.codehilite', # Resaltado de sintaxis
-    'markdown.extensions.toc',        # Tabla de contenidos (opcional)
-]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'blandskron.security.SecurityHeadersMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -79,6 +81,21 @@ MIDDLEWARE = [
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+SECURE_SSL_REDIRECT = (
+    os.getenv("DJANGO_SECURE_SSL_REDIRECT", "true").lower() in ("1", "true", "yes", "on")
+    and not IS_TESTING
+)
+SECURE_HSTS_SECONDS = 31536000 if SECURE_SSL_REDIRECT else 0
+SECURE_HSTS_INCLUDE_SUBDOMAINS = SECURE_SSL_REDIRECT
+SECURE_HSTS_PRELOAD = SECURE_SSL_REDIRECT
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+SESSION_COOKIE_SECURE = not DEBUG and not IS_TESTING
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SECURE = not DEBUG and not IS_TESTING
+CSRF_COOKIE_HTTPONLY = True
+X_FRAME_OPTIONS = "DENY"
 
 
 ROOT_URLCONF = 'blandskron.urls'
@@ -107,7 +124,7 @@ WSGI_APPLICATION = 'blandskron.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.getenv('DJANGO_DB_PATH', str(BASE_DIR / 'db.sqlite3')),
     }
 }
 

@@ -45,5 +45,13 @@
       <p>© 2026 Blandskron – Tecnología · Formación · Innovación</p>
     </div>
 
+    <nav class="mt-6 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-white/45" aria-label="Información legal">
+      <a href="{% url 'landing:terms_and_conditions' %}" class="hover:text-white transition-colors">Términos y condiciones</a>
+      <a href="{% url 'landing:privacy_policy' %}" class="hover:text-white transition-colors">Privacidad</a>
+      <a href="{% url 'landing:cookies_policy' %}" class="hover:text-white transition-colors">Cookies</a>
+      <a href="{% url 'landing:accessibility' %}" class="hover:text-white transition-colors">Accesibilidad</a>
+    </nav>
+    <a href="mailto:privacy@blandskron.com" class="mt-4 text-xs text-white/45 hover:text-white transition-colors">privacy@blandskron.com</a>
+
   </div>
 </footer>

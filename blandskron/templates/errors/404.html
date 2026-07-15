@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block title %}Página no encontrada | Blandskron{% endblock %}
+{% block meta_description %}La página solicitada no fue encontrada. Regresa al inicio de Blandskron.{% endblock %}
+{% block content %}<main class="legal-page"><meta http-equiv="refresh" content="5;url=/"><article class="legal-page__content fade-up text-center"><p class="legal-page__eyebrow">Error 404</p><h1>Esta página no existe.</h1><p>El contenido pudo cambiar de ubicación o la dirección no es correcta.</p><div class="mt-8 flex flex-wrap justify-center gap-3"><a class="btn-outline" href="/">Ir al inicio</a><a class="btn-outline" href="{% url 'landing:terms_and_conditions' %}">Conocer Blandskron</a><a class="btn-outline" href="/#contact">Contactar al equipo</a></div><p class="mt-8 text-sm text-white/40">Volverás al inicio en unos segundos.</p></article></main>{% endblock %}

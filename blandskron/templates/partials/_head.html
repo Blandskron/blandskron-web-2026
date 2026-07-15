@@ -1,0 +1,34 @@
+{% load static %}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{ page_title|default:"Blandskron | Transformación Digital Empresarial" }}</title>
+<meta name="description" content="{{ page_description|default:"Blandskron impulsa la transformación digital con soluciones en ciberseguridad, DevOps, formación y desarrollo de software." }}" />
+<meta name="keywords" content="{{ page_keywords|default:"Blandskron,ciberseguridad,DevOps,desarrollo de software,formación,IA" }}" />
+<meta name="author" content="Blandskron" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="{{ page_canonical|default:"https://www.blandskron.com/" }}" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ page_canonical|default:"https://www.blandskron.com/" }}" />
+<meta property="og:title" content="{{ page_title|default:"Blandskron | Transformación Digital Empresarial" }}" />
+<meta property="og:description" content="{{ page_description|default:"Ciberseguridad, DevOps, formación y software moderno para empresas." }}" />
+<meta property="og:image" content="https://www.blandskron.com/og-image.png" />
+<meta property="og:locale" content="es_CL" />
+<meta property="og:site_name" content="Blandskron" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ page_title|default:"Blandskron | Transformación Digital Empresarial" }}" />
+<meta name="twitter:description" content="{{ page_description|default:"Soluciones empresariales en ciberseguridad, DevOps y arquitectura de software." }}" />
+<meta name="twitter:image" content="https://www.blandskron.com/og-image.png" />
+
+<link rel="icon" href="{% static 'img/favicon.ico' %}" />
+<link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.ico' %}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="{% static 'css/core.css' %}" />
+<link rel="stylesheet" href="{% static 'css/site.css' %}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pygments/2.15.1/monokai.min.css" />

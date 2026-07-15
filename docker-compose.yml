@@ -1,7 +1,8 @@
-version: '3.8'
-
 services:
   web:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: blandskron/portafolioweb:latest
     # Carga automática de todas tus variables (Email, Secret Key, etc.)
     env_file:
@@ -12,11 +13,12 @@ services:
     
     environment:
       - DJANGO_DEBUG=${DJANGO_DEBUG:-False}
+      - DJANGO_SECURE_SSL_REDIRECT=${DJANGO_SECURE_SSL_REDIRECT:-False}
+      - DJANGO_DB_PATH=/data/db.sqlite3
     
     volumes:
-      # Persistencia de Base de Datos: Docker gestiona el archivo, no Windows.
-      # Esto evita el error de montaje que tuviste.
-      - sqlite_data:/app/blandskron
+      # Persistencia solo de la base de datos; no cubrir el código de la app.
+      - sqlite_data:/data
       # Persistencia de archivos estáticos para WhiteNoise
       - static_volume:/app/blandskron/staticfiles
     

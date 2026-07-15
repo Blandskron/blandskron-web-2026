@@ -10,6 +10,7 @@ se agradece mantener los créditos originales.
 https://blandskron.com
 """
 
+import bleach
 import markdown
 from django import template
 from django.utils.safestring import mark_safe
@@ -25,4 +26,11 @@ def markdown_to_html(text):
         'markdown.extensions.codehilite',
         'markdown.extensions.toc',
     ])
-    return mark_safe(md.convert(text))
+    safe_html = bleach.clean(
+        md.convert(text),
+        tags=["a", "blockquote", "br", "code", "del", "em", "h1", "h2", "h3", "h4", "h5", "h6", "hr", "img", "li", "ol", "p", "pre", "strong", "table", "tbody", "td", "th", "thead", "tr", "ul"],
+        attributes={"a": ["href", "title"], "code": ["class"], "img": ["src", "alt", "title"], "pre": ["class"]},
+        protocols=["http", "https", "mailto"],
+        strip=True,
+    )
+    return mark_safe(safe_html)

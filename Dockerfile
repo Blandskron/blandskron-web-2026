@@ -19,7 +19,7 @@ COPY blandskron/requirements.txt /app/requirements.txt
 
 # 2. Instalamos dependencias (Django 6.0.1 y las versiones específicas que me pasaste)
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r /app/requirements.txt gunicorn
+    && pip install --no-cache-dir -r /app/requirements.txt
 
 # 3. Copiamos todo el contenido del proyecto al contenedor
 # Esto pondrá la carpeta 'blandskron' dentro de '/app/'
